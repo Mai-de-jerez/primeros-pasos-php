@@ -139,6 +139,7 @@ p {
 /* ==========================================================================
    4. GRID DE ARTÍCULOS
    ========================================================================== */
+
 section {
     display: grid;
     grid-template-columns: 1fr;
@@ -147,7 +148,7 @@ section {
 
 @media (min-width: 768px) {
     section {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 }
 
@@ -310,6 +311,26 @@ section.newsletter {
 }
 
 .newsletter button:hover {
+    opacity: 0.85;
+}
+
+/* ==========================================================================
+   8. BOTÓN DE VOLVER
+   ========================================================================== */
+.btn-volver {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto 0;
+    padding: 0.6rem 1.25rem;
+    background-color: var(--acento);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.btn-volver:hover {
     opacity: 0.85;
 }
 
