@@ -12,7 +12,7 @@
         echo $i . "&lt;br&gt;";
     }
         </pre>  
-        <p>Estos valores corresponden a la salida del código PHP anterior escrito en el archivo PHP, pero tú solo ves aquí el resultado: </p>
+        <p>Salida de código: </p>
         <?php
         // declaramos el bucle for para imprimir los números del 1 al 10
         for ($i = 1; $i <= 10; $i++) {
@@ -29,17 +29,32 @@
         }   
     }
         </pre>
-        <p>Ejemplo: anidamos dos bucles for para imprimir una tabla de multiplicar del 1 al 5:</p>
+        <p>Ejemplo: anidamos dos bucles for para imprimir una pirámide de asteriscos:</p>
         <pre>
-    for ($i = 1; $i <= 10; $i++) {
-        echo "5 x $i = " . (5 * $i) . "\n";
-    }
+        // Bucle externo: controla la fila en la que estamos (del 1 al 5)
+        for ($i = 1; $i <= 5; $i++) {
+            
+            // Bucle interno: imprime tantos asteriscos como indique la fila actual
+            for ($j = 1; $j <= $i; $j++) {
+                echo "* ";
+            }
+            
+            // Salto de línea después de terminar cada fila
+            echo "&lt;br&gt;";
+        }
         </pre>
-        <p>Estos valores corresponden a la salida del código PHP anterior escrito en el archivo PHP, pero tú solo ves aquí el resultado: </p>
+        <p>Salida de código: </p>
         <?php
-        // declaramos el bucle for para imprimir la tabla de multiplicar del 1 al 5
-        for ($i = 1; $i <= 10; $i++) {
-            echo "5 x $i = " . (5 * $i) . "<br>";
+        // Bucle externo: controla la fila en la que estamos (del 1 al 5)
+        for ($i = 1; $i <= 5; $i++) {
+            
+            // Bucle interno: imprime tantos asteriscos como indique la fila actual
+            for ($j = 1; $j <= $i; $j++) {
+                echo "* ";
+            }
+            
+            // Salto de línea después de terminar cada fila
+            echo "<br>";
         }
         ?>
     </article>
