@@ -252,7 +252,40 @@ footer {
 }
 
 /* ==========================================================================
-   7. FORMULARIO DE SUSCRIPCIÓN (FOOTER)
+   7. INPUTS GLOBALES (Estilo base para toda la web)
+   ========================================================================== */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="date"],
+input[type="number"],
+input[type="tel"],
+input[type="url"] {
+    background-color: var(--bg-codigo);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--texto-claro);
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: var(--fuente-sans);
+    transition: border-color 0.2s;
+    width: 100%; /* Por defecto ocupan todo el ancho disponible */
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--acento);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   7.1. FORMULARIO DE SUSCRIPCIÓN (NEWSLETTER EN FOOTER)
    ========================================================================== */
 section.newsletter {
     display: block;
@@ -269,7 +302,6 @@ section.newsletter {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
     display: block;
-    justify-content: unset;
 }
 
 .newsletter p {
@@ -282,19 +314,12 @@ section.newsletter {
     justify-content: center;
 }
 
-.newsletter input[type="email"] {
-    background-color: var(--bg-codigo);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--texto-claro);
-    padding: 0.6rem 1rem;
-    border-radius: 6px;
-    font-size: 0.95rem;
+.newsletter input {
     flex: 1;
     max-width: 280px;
-    transition: border-color 0.2s;
 }
 
-.newsletter input[type="email"]:focus {
+.newsletter input :focus {
     outline: none;
     border-color: var(--acento);
 }
@@ -311,6 +336,55 @@ section.newsletter {
 }
 
 .newsletter button:hover {
+    opacity: 0.85;
+}
+
+/* ==========================================================================
+   7.2. FORMULARIO DE ALTA DE ALUMNOS (NUEVO)
+   ========================================================================== */
+.contenedor-registro {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-registro {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; 
+    margin-top: 1.5rem;
+}
+
+/* Ordenación vertical para las etiquetas e inputs del alta */
+.form-registro .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: flex-start;
+}
+
+.form-registro label {
+    color: var(--texto-mutated);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Botón de envío  */
+.form-registro .btn-enviar {
+    background-color: var(--acento);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    width: fit-content;
+    align-self: center; 
+    margin-top: 0.5rem;
+}
+
+.form-registro .btn-enviar:hover {
     opacity: 0.85;
 }
 

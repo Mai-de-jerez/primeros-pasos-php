@@ -28,6 +28,8 @@
                     <li><a href="?pagina=03-imprimir-variables">3. Variables</a></li>
                     <li><a href="?pagina=04-condicionales">4. Condicionales</a></li>
                     <li><a href="?pagina=05-bucle-for">5. Bucles</a></li>
+                    <li><a href="?pagina=06-arrays">6. Arrays</a></li>
+                    <li><a href="?pagina=07-operadores">7. Operadores</a></li>
                 </ul>  
                 </article>                                   
             </section>
