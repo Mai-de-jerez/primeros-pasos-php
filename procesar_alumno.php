@@ -1,32 +1,56 @@
-<?php
-// forma coñazo 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+<body>
+    <header>
+        <!-- Con require podemos incluir un archivo dentro de otro y detener la ejecución si no se encuentra -->
+        <?php require 'includes/header.php'; ?>
+    </header> 
+    <main>
+        <section>
+            <article>
+                <?php
+                    // forma coñazo 
 
-// $nombre = $_POST['nombre'];
-// $apellidos = $_POST['apellidos'];
-// $dni = $_POST['dni'];
-// $email = $_POST['email'];
-// $telefono = $_POST['telefono'];
-// $fecha_nacimiento = $_POST['fecha_nacimiento'];
-// $direccion = $_POST['direccion'];
+                    // $nombre = $_POST['nombre'];
+                    // $apellidos = $_POST['apellidos'];
+                    // $dni = $_POST['dni'];
+                    // $email = $_POST['email'];
+                    // $telefono = $_POST['telefono'];
+                    // $fecha_nacimiento = $_POST['fecha_nacimiento'];
+                    // $direccion = $_POST['direccion'];
 
-// óptimo
-foreach ($_POST as $key => $value) {
-    if (empty($value)) {
-        echo "<p>El campo '$key' está vacío.</p>";
-    }
-}
+                    // óptimo
+                    foreach ($_POST as $key => $value) {
+                        if (empty($value)) {
+                            echo "<p>El campo '$key' está vacío.</p>";
+                        }
+                    }
 
-foreach ($_POST as $key => $value) {
-    $$key = $value; // Esto crea variables dinámicas con los nombres de los campos del formulario
-}
+                    foreach ($_POST as $key => $value) {
+                        $$key = $value; // Esto crea variables dinámicas con los nombres de los campos del formulario
+                    }
 
-echo "<h1>Datos del alumno</h1>";
-echo "<p>Nombre: {$_POST['nombre']}</p>";
-echo "<p>Apellidos: {$_POST['apellidos']}</p>";
-echo "<p>DNI: {$_POST['dni']}</p>";
-echo "<p>Email: {$_POST['email']}</p>";
-echo "<p>Teléfono: {$_POST['telefono']}</p>";
-echo "<p>Fecha de nacimiento: {$_POST['fecha_nacimiento']}</p>";
-echo "<p>Dirección: {$_POST['direccion']}</p>";
-
-
+                    echo "<h1>Datos del alumno</h1>";
+                    echo "<p>Nombre: {$_POST['nombre']}</p>";
+                    echo "<p>Apellidos: {$_POST['apellidos']}</p>";
+                    echo "<p>DNI: {$_POST['dni']}</p>";
+                    echo "<p>Email: {$_POST['email']}</p>";
+                    echo "<p>Teléfono: {$_POST['telefono']}</p>";
+                    echo "<p>Fecha de nacimiento: {$_POST['fecha_nacimiento']}</p>";
+                    echo "<p>Dirección: {$_POST['direccion']}</p>";
+                ?>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <!-- Con require porque el footer es esencial y no queremos que se ejecute el resto del código si no se encuentra -->
+        <?php require 'includes/footer.php'; ?>
+    </footer>
+</body>
+</html>
