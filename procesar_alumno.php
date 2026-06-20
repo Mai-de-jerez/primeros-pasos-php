@@ -32,10 +32,6 @@
                         }
                     }
 
-                    foreach ($_POST as $key => $value) {
-                        $$key = $value; // Esto crea variables dinámicas con los nombres de los campos del formulario
-                    }
-
                     echo "<h1>Datos del alumno</h1>";
                     echo "<p>Nombre: {$_POST['nombre']}</p>";
                     echo "<p>Apellidos: {$_POST['apellidos']}</p>";
@@ -44,6 +40,25 @@
                     echo "<p>Teléfono: {$_POST['telefono']}</p>";
                     echo "<p>Fecha de nacimiento: {$_POST['fecha_nacimiento']}</p>";
                     echo "<p>Dirección: {$_POST['direccion']}</p>";
+
+                    // con $$ podemos crear variables dinámicas con los nombres de los campos del formulario, 
+                    // pero hay que tener cuidado con esto porque puede ser un riesgo de seguridad si no se valida correctamente la entrada del usuario
+                    foreach ($_POST as $key => $value) {
+                        $$key = $value; 
+                    }
+
+                    // y entonces ya podemos usar las variables directamente
+                    echo "<h1>Otra forma de mostrar los datos</h1>";
+                    echo "<table>";
+                    echo "<tr><th>Campo</th><th>Valor</th></tr>";
+                    echo "<tr><td>Nombre</td><td>$nombre</td></tr>";
+                    echo "<tr><td>Apellidos</td><td>$apellidos</td></tr>";
+                    echo "<tr><td>DNI</td><td>$dni</td></tr>";
+                    echo "<tr><td>Email</td><td>$email</td></tr>";
+                    echo "<tr><td>Teléfono</td><td>$telefono</td></tr>";
+                    echo "<tr><td>Fecha de nacimiento</td><td>$fecha_nacimiento</td></tr>";
+                    echo "<tr><td>Dirección</td><td>$direccion</td></tr>";
+                    echo "</table>";
                 ?>
             </article>
         </section>

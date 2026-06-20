@@ -408,7 +408,57 @@ section.newsletter {
     opacity: 0.85;
 }
 
+/* ==========================================================================
+    9. ESTILOS PARA LA TABLA DE ALUMNOS (MODERNA)
+   ========================================================================== */
+.contenedor-tabla {
+    width: 100%;
+    overflow-x: auto; /* Permite scroll horizontal si la tabla es muy ancha en móviles */
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 1.5rem;
+}
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-tarjeta);
+    color: var(--texto-claro);
+    font-size: 0.95rem;
+}
 
+th, td {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Líneas sutiles en vez de bordes gruesos */
+}
+
+th {
+    background-color: var(--bg-codigo);
+    color: var(--acento);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--acento); /* Línea de acento lila abajo de las cabeceras */
+}
+
+/* Filas alternas con un tono sutil */
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.01);
+}
+
+/* Efecto hover interactivo al pasar el ratón por la fila */
+tr:hover {
+    background-color: rgba(168, 85, 247, 0.04); /* Un destello lila muy suave */
+    transition: background-color 0.2s ease;
+}
+
+/* Estilo opcional para datos importantes dentro de la tabla (como nombres o IDs) */
+td strong {
+    color: var(--texto-claro);
+    font-family: var(--fuente-sans);
+}
 
 
